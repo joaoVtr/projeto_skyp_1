@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AparelhoController;
+use App\Http\Controllers\ClienteContratoController;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ContaController;
 use App\Http\Controllers\ContratoController;
 use App\Http\Controllers\EstoqueController;
 use Illuminate\Http\Request;
@@ -26,6 +28,7 @@ Route::apiResources([
     'clientes' => ClienteController::class,
     'contratos' => ContratoController::class,
     'aparelhos' => AparelhoController::class,
-    'estoques' => EstoqueController::class
-
+    'estoques' => EstoqueController::class,
+    'contas' => ContaController::class,
+    'clientecontratos' => ClienteContratoController::class,
 ]);

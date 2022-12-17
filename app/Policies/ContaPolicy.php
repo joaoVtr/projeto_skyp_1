@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\ClienteContrato;
+use App\Models\Conta;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class ClienteContratoPolicy
+class ContaPolicy
 {
     use HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class ClienteContratoPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\ClienteContrato  $clienteContrato
+     * @param  \App\Models\Conta  $conta
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, ClienteContrato $clienteContrato)
+    public function view(User $user, Conta $conta)
     {
         //
     }
@@ -48,10 +48,10 @@ class ClienteContratoPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\ClienteContrato  $clienteContrato
+     * @param  \App\Models\Conta  $conta
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, ClienteContrato $clienteContrato)
+    public function update(User $user, Conta $conta)
     {
         //
     }
@@ -60,10 +60,10 @@ class ClienteContratoPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\ClienteContrato  $clienteContrato
+     * @param  \App\Models\Conta  $conta
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, ClienteContrato $clienteContrato)
+    public function delete(User $user, Conta $conta)
     {
         //
     }
@@ -72,10 +72,10 @@ class ClienteContratoPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\ClienteContrato  $clienteContrato
+     * @param  \App\Models\Conta  $conta
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, ClienteContrato $clienteContrato)
+    public function restore(User $user, Conta $conta)
     {
         //
     }
@@ -84,10 +84,10 @@ class ClienteContratoPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\ClienteContrato  $clienteContrato
+     * @param  \App\Models\Conta  $conta
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, ClienteContrato $clienteContrato)
+    public function forceDelete(User $user, Conta $conta)
     {
         //
     }
