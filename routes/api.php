@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AparelhoController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ContratoController;
 use Illuminate\Http\Request;
@@ -22,5 +23,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResources([
     'clientes' => ClienteController::class,
-    'contratos' => ContratoController::class
+    'contratos' => ContratoController::class,
+    'aparelhos' => AparelhoController::class
 ]);

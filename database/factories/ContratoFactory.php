@@ -17,7 +17,7 @@ class ContratoFactory extends Factory
     public function definition()
     {
         return [
-            'contrato' => fake()->paragraph(),
+            'contrato' => fake()->sentence(1),
             'nome' => fake()->name(),
             'valor' => fake()->numberBetween(1, 500),
             'status' => fake()->sentence(3)
