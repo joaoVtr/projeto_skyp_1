@@ -3,6 +3,7 @@
 use App\Http\Controllers\AparelhoController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ContratoController;
+use App\Http\Controllers\EstoqueController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,5 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResources([
     'clientes' => ClienteController::class,
     'contratos' => ContratoController::class,
-    'aparelhos' => AparelhoController::class
+    'aparelhos' => AparelhoController::class,
+    'estoques' => EstoqueController::class
+
 ]);
