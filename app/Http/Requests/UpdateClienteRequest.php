@@ -24,7 +24,12 @@ class UpdateClienteRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'cpf' => ['string', 'required'],
+            'nome_contrato' => ['string', 'required'],
+            'email' => ['string', 'required', 'email'],
+            'telefone1' => ['string'],
+            'telefone2' => ['string'],
+            'telefone3' => ['string']
         ];
     }
 }

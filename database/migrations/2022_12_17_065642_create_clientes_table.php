@@ -15,6 +15,12 @@ return new class extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
+            $table->string('nome_contrato');
+            $table->string('cpf', 30);
+            $table->string('email');
+            $table->string('telefone1')->nullable();
+            $table->string('telefone2')->nullable();
+            $table->string('telefone3')->nullable();
             $table->timestamps();
         });
     }

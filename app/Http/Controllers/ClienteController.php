@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreClienteRequest;
 use App\Http\Requests\UpdateClienteRequest;
 use App\Models\Cliente;
+use App\Http\Resources\ClienteResource;
 
 class ClienteController extends Controller
 {
@@ -15,7 +16,8 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        //
+        $clientes = Cliente::all();
+        return ClienteResource::collection($clientes);
     }
 
     /**
@@ -26,7 +28,9 @@ class ClienteController extends Controller
      */
     public function store(StoreClienteRequest $request)
     {
-        //
+        $cliente = Cliente::create($request->validated());
+
+        return new ClienteResource($cliente);
     }
 
     /**
@@ -37,7 +41,8 @@ class ClienteController extends Controller
      */
     public function show(Cliente $cliente)
     {
-        //
+        $data = Cliente::find($cliente->id);
+        return new ClienteResource($data);
     }
 
     /**
@@ -49,7 +54,9 @@ class ClienteController extends Controller
      */
     public function update(UpdateClienteRequest $request, Cliente $cliente)
     {
-        //
+        $cliente->fill($request->validated())->save();
+
+        return new ClienteResource($cliente);
     }
 
     /**
@@ -60,6 +67,7 @@ class ClienteController extends Controller
      */
     public function destroy(Cliente $cliente)
     {
-        //
+        Cliente::destroy($cliente->id);
+        return response()->json([], 204);
     }
 }
