@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreClienteContratoRequest;
 use App\Http\Requests\UpdateClienteContratoRequest;
+use App\Http\Resources\ClienteContratoResource;
 use App\Models\ClienteContrato;
 
 class ClienteContratoController extends Controller
@@ -15,7 +16,9 @@ class ClienteContratoController extends Controller
      */
     public function index()
     {
-        //
+        $clienteContratos = ClienteContrato::with(['clientes', 'contratos', 'aparelhos', 'contas'])->get();
+
+        return ClienteContratoResource::collection($clienteContratos);
     }
 
     /**
@@ -26,7 +29,9 @@ class ClienteContratoController extends Controller
      */
     public function store(StoreClienteContratoRequest $request)
     {
-        //
+        $clienteContratos = ClienteContrato::create($request->validated());
+
+        return new ClienteContratoResource($clienteContratos);
     }
 
     /**
@@ -35,9 +40,10 @@ class ClienteContratoController extends Controller
      * @param  \App\Models\ClienteContrato  $ClienteContrato
      * @return \Illuminate\Http\Response
      */
-    public function show(ClienteContrato $ClienteContrato)
+    public function show(ClienteContrato $clientecontrato)
     {
-        //
+        $data = ClienteContrato::with(['clientes', 'contratos', 'aparelhos', 'contas'])->find($clientecontrato->id);
+        return new ClienteContratoResource($data);
     }
 
     /**
@@ -47,9 +53,11 @@ class ClienteContratoController extends Controller
      * @param  \App\Models\ClienteContrato  $ClienteContrato
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateClienteContratoRequest $request, ClienteContrato $ClienteContrato)
+    public function update(UpdateClienteContratoRequest $request, ClienteContrato $clientecontrato)
     {
-        //
+        $clientecontrato->fill($request->validated())->save();
+
+        return new ClienteContratoResource($clientecontrato);
     }
 
     /**
@@ -58,8 +66,9 @@ class ClienteContratoController extends Controller
      * @param  \App\Models\ClienteContrato  $ClienteContrato
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ClienteContrato $ClienteContrato)
+    public function destroy(ClienteContrato $clientecontrato)
     {
-        //
+        ClienteContrato::destroy($clientecontrato->id);
+        return response()->json([], 204);
     }
 }
