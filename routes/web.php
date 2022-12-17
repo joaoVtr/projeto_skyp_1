@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('modern-dark-menu/clientes', function () {
-    return view('pages.page.clientes', ['title' => 'Empty | CORK - Multipurpose Bootstrap Dashboard Template', 'breadcrumb' => 'This Breadcrumb']);
+    return view('pages.page.clientes', ['title' => 'Clientes', 'breadcrumb' => 'This Breadcrumb']);
 });
 
 //$prefixRouters = [
