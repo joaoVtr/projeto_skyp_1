@@ -22,7 +22,7 @@ class ClienteFactory extends Factory
             'email' => fake()->email(),
             'telefone1' => fake()->sentence(1),
             'telefone2' => fake()->sentence(1),
-            'telefone3' => fake()->sentence(1)
+            'telefone3' => fake()->sentence(1),
         ];
     }
 }
