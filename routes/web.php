@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('modern-dark-menu/faqq', function () {
+Route::get('modern-dark-menu/clientes', function () {
     return view('pages.page.clientes', ['title' => 'Empty | CORK - Multipurpose Bootstrap Dashboard Template', 'breadcrumb' => 'This Breadcrumb']);
 });
 
