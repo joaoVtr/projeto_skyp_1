@@ -25,7 +25,7 @@ class StoreClienteRequest extends FormRequest
     {
         return [
             'cpf' => ['string', 'required'],
-            'nome_contrato' => ['string', 'required'],
+            'nome' => ['string', 'required'],
             'email' => ['string', 'required', 'email'],
             'telefone1' => ['string'],
             'telefone2' => ['string'],

@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Cliente;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Contrato;
 
-class ClienteSeeder extends Seeder
+class ContratoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +15,6 @@ class ClienteSeeder extends Seeder
      */
     public function run()
     {
-        Cliente::factory()->count(10)->create();
+        Contrato::factory()->count(10)->create();
     }
 }

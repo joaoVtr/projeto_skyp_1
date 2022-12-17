@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('clientes', function (Blueprint $table) {
+        Schema::create('contratos', function (Blueprint $table) {
             $table->id();
+            $table->string('contrato');
             $table->string('nome');
-            $table->string('cpf', 30);
-            $table->string('email');
-            $table->string('telefone1')->nullable();
-            $table->string('telefone2')->nullable();
-            $table->string('telefone3')->nullable();
+            $table->integer('valor');
+            $table->string('status');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clientes');
+        Schema::dropIfExists('contratos');
     }
 };
