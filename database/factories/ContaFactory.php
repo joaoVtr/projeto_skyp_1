@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ClienteContrato>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Conta>
  */
-class ClienteContratoFactory extends Factory
+class ContaFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,9 @@ class ClienteContratoFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nome' => fake()->sentence(1),
+            'numero' => fake()->numerify("######"),
+            'proprietario' => fake()->sentence(1)
         ];
     }
 }

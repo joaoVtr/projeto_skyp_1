@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\Aparelho;
 use App\Models\Cliente;
+use App\Models\Conta;
 use App\Models\Contrato;
 use App\Models\Estoque;
 use Illuminate\Database\Seeder;
@@ -38,6 +39,7 @@ class DatabaseSeeder extends Seeder
             ['aparelho_id' => 4],
             ['aparelho_id' => 5],
         ))->create();
+        Conta::factory()->count(10)->create();
 
 
         // \App\Models\User::factory()->create([

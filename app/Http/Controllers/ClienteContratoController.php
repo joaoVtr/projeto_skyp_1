@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreCliente_ContratoRequest;
-use App\Http\Requests\UpdateCliente_ContratoRequest;
-use App\Models\Cliente_Contrato;
+use App\Http\Requests\StoreClienteContratoRequest;
+use App\Http\Requests\UpdateClienteContratoRequest;
+use App\Models\ClienteContrato;
 
 class ClienteContratoController extends Controller
 {
@@ -21,10 +21,10 @@ class ClienteContratoController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreCliente_ContratoRequest  $request
+     * @param  \App\Http\Requests\StoreClienteContratoRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCliente_ContratoRequest $request)
+    public function store(StoreClienteContratoRequest $request)
     {
         //
     }
@@ -32,10 +32,10 @@ class ClienteContratoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Cliente_Contrato  $cliente_Contrato
+     * @param  \App\Models\ClienteContrato  $ClienteContrato
      * @return \Illuminate\Http\Response
      */
-    public function show(Cliente_Contrato $cliente_Contrato)
+    public function show(ClienteContrato $ClienteContrato)
     {
         //
     }
@@ -43,11 +43,11 @@ class ClienteContratoController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateCliente_ContratoRequest  $request
-     * @param  \App\Models\Cliente_Contrato  $cliente_Contrato
+     * @param  \App\Http\Requests\UpdateClienteContratoRequest  $request
+     * @param  \App\Models\ClienteContrato  $ClienteContrato
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCliente_ContratoRequest $request, Cliente_Contrato $cliente_Contrato)
+    public function update(UpdateClienteContratoRequest $request, ClienteContrato $ClienteContrato)
     {
         //
     }
@@ -55,10 +55,10 @@ class ClienteContratoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Cliente_Contrato  $cliente_Contrato
+     * @param  \App\Models\ClienteContrato  $ClienteContrato
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cliente_Contrato $cliente_Contrato)
+    public function destroy(ClienteContrato $ClienteContrato)
     {
         //
     }

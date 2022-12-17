@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cliente__contratos', function (Blueprint $table) {
+        Schema::create('cliente_contrato', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cliente__contratos');
+        Schema::dropIfExists('cliente_contrato');
     }
 };
