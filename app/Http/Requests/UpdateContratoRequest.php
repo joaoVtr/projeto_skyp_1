@@ -13,7 +13,7 @@ class UpdateContratoRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class UpdateContratoRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            "contrato" => ["required", "string"],
+            "nome" => ["string"],
+            "valor" => ["integer"],
+            "status" => ["string"],
         ];
     }
 }

@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('contratos', function (Blueprint $table) {
             $table->id();
             $table->string('contrato');
-            $table->string('nome');
-            $table->integer('valor');
-            $table->string('status');
+            $table->string('nome')->nullable();
+            $table->integer('valor')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

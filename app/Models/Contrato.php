@@ -10,4 +10,11 @@ class Contrato extends Model
     use HasFactory;
 
     protected $table = 'contratos';
+
+    protected $fillable = [
+        'contrato',
+        'nome',
+        'valor',
+        'status'
+    ];
 }
