@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreContratoRequest;
 use App\Http\Requests\UpdateContratoRequest;
+use App\Http\Resources\ContratoResource;
 use App\Models\Contrato;
 
 class ContratoController extends Controller
@@ -15,7 +16,8 @@ class ContratoController extends Controller
      */
     public function index()
     {
-        //
+        $contrato = Contrato::all();
+        return ContratoResource::collection($contrato);
     }
 
     /**
@@ -26,7 +28,9 @@ class ContratoController extends Controller
      */
     public function store(StoreContratoRequest $request)
     {
-        //
+        $Contrato = Contrato::create($request->validated());
+
+        return new ContratoResource($Contrato);
     }
 
     /**
@@ -37,7 +41,8 @@ class ContratoController extends Controller
      */
     public function show(Contrato $contrato)
     {
-        //
+        $data = Contrato::find($contrato->id);
+        return new ContratoResource($data);
     }
 
     /**
@@ -49,7 +54,9 @@ class ContratoController extends Controller
      */
     public function update(UpdateContratoRequest $request, Contrato $contrato)
     {
-        //
+        $contrato->fill($request->validated())->save();
+
+        return new ContratoResource($contrato);
     }
 
     /**
@@ -60,6 +67,7 @@ class ContratoController extends Controller
      */
     public function destroy(Contrato $contrato)
     {
-        //
+        Contrato::destroy($contrato->id);
+        return response()->json([], 204);
     }
 }

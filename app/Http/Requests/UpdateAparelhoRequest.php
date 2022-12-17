@@ -3,8 +3,10 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
+use Illuminate\Http\Request;
 
-class UpdateContratoRequest extends FormRequest
+class UpdateAparelhoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +26,11 @@ class UpdateContratoRequest extends FormRequest
     public function rules()
     {
         return [
-            "contrato" => ["required", "string"],
-            "nome" => ["string"],
-            "valor" => ["integer"],
-            "status" => ["string"],
+            'contrato_id' => [
+                'required', Rule::unique('aparelhos', 'contrato_id')->ignore(Request::segment(3), 'id')
+            ],
+            'modelo' => ['string'],
+            'observacao' => ['string']
         ];
     }
 }
