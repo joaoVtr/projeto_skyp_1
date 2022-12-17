@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use App\Models\Aparelho;
 use App\Models\Cliente;
 use App\Models\Contrato;
+use App\Models\Estoque;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Factories\Sequence;
 
@@ -29,6 +30,13 @@ class DatabaseSeeder extends Seeder
             ['contrato_id' => 3],
             ['contrato_id' => 4],
             ['contrato_id' => 5],
+        ))->create();
+        Estoque::factory()->count(5)->state(new Sequence(
+            ['aparelho_id' => 1],
+            ['aparelho_id' => 2],
+            ['aparelho_id' => 3],
+            ['aparelho_id' => 4],
+            ['aparelho_id' => 5],
         ))->create();
 
 
