@@ -21,7 +21,9 @@ class ClienteResource extends JsonResource
             'email' => $this->email,
             'telefone1' => $this->telefone1,
             'telefone2' => $this->telefone2,
-            'telefone3' => $this->telefone3
+            'telefone3' => $this->telefone3,
+            'criado_em' => date('Y-m-d', strtotime($this->created_at)),
+            'atualizado_em' => date('Y-m-d', strtotime($this->updated_at)),
         ];
     }
 }

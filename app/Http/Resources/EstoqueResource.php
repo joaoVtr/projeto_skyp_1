@@ -19,6 +19,8 @@ class EstoqueResource extends JsonResource
             'aparelho_id' => $this->aparelho_id,
             'numero_cartao' => $this->numero_cartao,
             'conta_sky' => $this->conta_sky,
+            'criado_em' => date('Y-m-d', strtotime($this->created_at)),
+            'atualizado_em' => date('Y-m-d', strtotime($this->updated_at)),
             'aparelho' => new AparelhoResource($this->whenLoaded('aparelho'))
         ];
     }

@@ -19,7 +19,9 @@ class ContratoResource extends JsonResource
             'contrato' => $this->contrato,
             'nome' => $this->nome,
             'valor' => $this->valor,
-            'status' => $this->status
+            'status' => $this->status,
+            'criado_em' => date('Y-m-d', strtotime($this->created_at)),
+            'atualizado_em' => date('Y-m-d', strtotime($this->updated_at)),
         ];
     }
 }

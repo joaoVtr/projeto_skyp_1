@@ -16,6 +16,9 @@ class ClienteController extends Controller
      */
     public function index()
     {
+        // Verifica se é cliente ou usuário
+        // dd(auth()->user()->tokenCan('role:user'));
+
         $clientes = Cliente::all();
         return ClienteResource::collection($clientes);
     }

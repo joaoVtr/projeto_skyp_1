@@ -18,7 +18,9 @@ class ContaResource extends JsonResource
             'id' => $this->id,
             'nome' => $this->nome,
             'numero' => $this->numero,
-            'proprietario' => $this->proprietario
+            'proprietario' => $this->proprietario,
+            'criado_em' => date('Y-m-d', strtotime($this->created_at)),
+            'atualizado_em' => date('Y-m-d', strtotime($this->updated_at)),
         ];
     }
 }

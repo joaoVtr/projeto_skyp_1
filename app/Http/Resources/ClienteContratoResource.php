@@ -32,6 +32,8 @@ class ClienteContratoResource extends JsonResource
             'data_instalacao' => $this->data_instalacao,
             'dia_vencimento' => $this->dia_vencimento,
             'observacao' => $this->observacao,
+            'criado_em' => date('Y-m-d', strtotime($this->created_at)),
+            'atualizado_em' => date('Y-m-d', strtotime($this->updated_at)),
             'clientes' => ClienteResource::collection($this->whenLoaded('clientes')),
             'contratos' => ContratoResource::collection($this->whenLoaded('contratos')),
             'contas' => ContaResource::collection($this->whenLoaded('contas')),

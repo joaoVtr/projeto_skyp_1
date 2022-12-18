@@ -19,6 +19,8 @@ class AparelhoResource extends JsonResource
             'contrato_id' => $this->contrato_id,
             'modelo' => $this->modelo,
             'observacao' => $this->observacao,
+            'criado_em' => date('Y-m-d', strtotime($this->created_at)),
+            'atualizado_em' => date('Y-m-d', strtotime($this->updated_at)),
             'contrato' => new ContratoResource($this->whenLoaded('contrato'))
         ];
     }
